@@ -1,0 +1,69 @@
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+form {
+    width: 100%;
+    margin: 2em 0;
+    margin-bottom: 3em;
+}
+form input, textarea {
+    width: 100%;
+    border: 1px solid #999;
+    border-radius: 2px;
+
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4em;
+}
+.row {
+    margin-top: 1em;
+}
+.authors .col-md-10 input {
+    margin-bottom: 1em;
+}
+.row.abstract, .authors {
+    align-items: flex-start;
+}
+form button {
+    float: right;
+    font-family: inherit;
+    font-size: inherit;
+
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 0.4em;
+    background: #23C265;
+    color: white;
+}
+.upload button {
+    width: 100%;
+}
+.upload input {
+    margin-bottom: 1em;
+}
+@media only screen and (max-width: 800px) {
+    .row {
+        display: block;
+    }
+    .authors button {
+        margin-bottom: 1em;
+    }
+    form button {
+        width: 100%;
+    }
+    .col-md-2 {
+        margin-bottom: 0.5em;
+    }
+    .anonymous {
+        display: flex;
+        align-items: center;
+    }
+    .anonymous .col-sm-4 {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #anon-check {
+        width: auto;
+    }
+}

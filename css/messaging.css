@@ -1,0 +1,90 @@
+.main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.comment-main {
+    display: flex;
+    margin: 1em 0;
+    align-items: flex-start;
+}
+.comment-header .name {
+    font-weight: bold;
+}
+.photo-canvas {
+    border: 4px solid #23C265;;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+.photo-canvas img {
+    width: 100%;
+    height: auto;
+}
+.comment-header {
+    margin-bottom: 0.5em;
+}
+.comment-header .time {
+    color: #999;
+}
+.comment-text {
+    margin-bottom: 0.5em;
+}
+.text-area {
+    margin-left: 1em;
+}
+.fa {
+    cursor: pointer;
+}
+.fa-heart {
+    color: #23C265;
+}
+.fa-reply {
+    color: #999;
+}
+.fa-flag {
+    color: #F00;
+}
+.middot-separator {
+    color: #999;
+    margin: 0 0.5em;
+    font-weight: bold;
+}
+/* new comment */
+.comment-main textarea {
+    width: 100%;
+    border: 1px solid #999;
+    border-radius: 2px 2px 0 0;
+
+    padding: 0.5em;
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 0;
+    resize: none;
+}
+.post-btn-cont {
+    border: 1px solid #999;
+    border-radius: 0 0 2px 2px;
+    border-top: none;
+    margin-top: -3px;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: white;
+}
+.post-btn-cont button {
+    border: none;
+    border-radius: 2px;
+    background: #23C265;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    margin: 0.5em;
+    min-width: 72px;
+}

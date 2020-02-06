@@ -1,0 +1,157 @@
+* {
+    font-family: "Minion Pro";
+}
+header {
+    margin-bottom: 2em;
+    padding: 1.2em 1em;
+    padding-right: 0;
+    border-bottom: 1px solid #999;
+}
+.search-bar input {
+    height: 2em;
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid #23C265;
+    border-radius: 1em;
+    outline: none;
+    margin: 0;
+    padding: 0 1em;
+
+    float: right;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.search-bar button {
+    float: right;
+    height: 2em;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background: #23C265;
+    border: 1px solid #23C265;
+    border-left: none;
+    border-radius: 0 1em 1em 0;
+    outline: none;
+
+    margin: 0;
+    padding: 0 0.5em;
+    cursor: pointer;
+}
+.search-bar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.notification {
+    float: right;
+    text-align: center;
+    padding: 0.25em 0;
+}
+.profile {
+    width: 2em;
+    height: 2em;
+    margin-left: 1em;
+    float: right;
+    text-align: center;
+    margin-right: 2em;
+    position: relative;
+}
+
+.profile:hover {
+    border-radius: 50%;
+    background: lightgrey;
+}
+.profile-content {
+    float: left;
+    overflow: hidden;
+    display: none;
+    text-align: left;
+    position: absolute;
+    top: 3.2em;
+    right: 0;
+    min-width: 120px;
+    z-index: 1;
+
+    background: #ddd;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+}
+.profile-content div {
+    padding: 0.4em 0.5em;
+    vertical-align: middle;
+}
+.profile-content div:first-child {
+    border-bottom: 1px solid grey;
+}
+.profile-content div:last-child {
+    border-top: 1px solid grey;
+    padding: 0;
+}
+.profile-content button {
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4em 0.5em;
+    border: none;
+    background: inherit;
+}
+.profile-content div:hover {
+    background: lightgrey;
+}
+.profile-content button:hover {
+    color: red;
+}
+.show {
+    display: block;
+}
+/* paper object styles */
+.paper-body {
+    border-top: 1px solid #999;
+    padding-top: 0.8em;
+    margin: 0.5em;
+    cursor: pointer;
+}
+.last-paper-body {
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.8em;
+}
+.paper-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.4em;
+}
+.paper-details {
+    color: #999;
+    font-size: 0.8em;
+}
+.paper-invisible {
+    display: flex;
+    justify-content: space-between;
+}
+.paper-invisible * {
+    display: none;
+    text-decoration: none;
+}
+.paper-body:hover .paper-invisible * {
+    display: block;
+}
+.load-more {
+    text-align: center;
+}
+.load-more button {
+    width: 40%;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.5em;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.load-more button:hover {
+    border: 1px solid #999;
+    border-radius: 2px;
+    background: lightgrey;
+}

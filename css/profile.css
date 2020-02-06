@@ -1,0 +1,97 @@
+header {
+    margin-bottom: 0;
+}
+.main {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #999;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+/*edits ==draft */
+.header {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgrey;
+}
+.personal-information {
+    margin: 5vh;
+}
+.photo-canvas {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.photo {
+    margin-left: 5vh;
+    height: 25vh;
+    width: 25vh;
+    border-radius: 50%;
+    border: 4px solid #FFF;
+    background: black;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+}
+.paper-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5vh;
+    margin-top: 1em;
+    font-style: italic;
+}
+
+.paper-information h2 {
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.2em;
+    font-weight: bold;
+    font-style: normal;
+}
+.paper-information .bookmarks h2 {
+    margin-top: 0.5em;
+}
+@media only screen and (max-width: 800px) {
+    .main {
+        width: 90%;
+    }
+    .header {
+        height: 60vh;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .personal-information h2 {
+        text-align: center;
+    }
+    .personal-information {
+        margin-top: 0;
+    }
+    .photo {
+        margin: 0;
+    }
+}
+/* lists: restore default settings */
+ul {
+   list-style-type: disc;
+   list-style-position: inside;
+   font-size: 1em;
+   margin-top: 1em;
+}
+ol {
+   list-style-type: decimal;
+   list-style-position: inside;
+}
+ul ul, ol ul {
+   list-style-type: circle;
+   list-style-position: inside;
+   margin-left: 15px;
+}
+ol ol, ul ol {
+   list-style-type: lower-latin;
+   list-style-position: inside;
+   margin-left: 15px;
+}

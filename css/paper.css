@@ -1,0 +1,38 @@
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Minion Pro";
+    font-size: 1.2em;
+}
+.title-author {
+    margin-bottom: 2em;
+}
+.title {
+    font-style: normal;
+}
+.author {
+    color: #999;
+}
+.abstract-title {
+    margin-bottom: 1em;
+}
+.abstract {
+    text-align: justify;
+    margin-bottom: 1em;
+}
+p {
+    text-indent: 1em;
+}
+p:first-child {
+    text-indent: 0;
+}
+.paper-widgets {
+    justify-content: space-between;
+}
+.dropcap {
+    color: #999;
+    float: left;
+    font-size: 3em;
+    margin-top: -4px;
+}
