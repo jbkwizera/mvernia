@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="paper-information">
-                <div class="my-papers">
+                <div class="my-papers" id="my-papers">
                     <h2>My papers</h2>
                     <ul class="papers-list">
                         <li class="paper-visible"><a href="#">Paradoxical Moment-of-Inertia Changes Due to Putative Super-Solids</a></li>
@@ -57,7 +57,7 @@
                         <li class="paper-visible"><a href="#">Rocket Reentry & Retropropulsion</a></li>
                     </ul>
                 </div>
-                <div class="bookmarks">
+                <div class="bookmarks" id="bookmarks">
                     <h2>Bookmarked papers</h2>
                     <ul class="papers-list">
                         <li class="paper-visible"><a href="#">Paradoxical Moment-of-Inertia Changes Due to Putative Super-Solids</a></li>

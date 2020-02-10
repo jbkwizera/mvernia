@@ -11,7 +11,7 @@
     <body>
         <header class="row">
             <div class="col-md-3 col-sm-2 brand">
-                <h1 class="logo-name-h">mvernia</h1>
+                <h1 class="logo-name-h">Eklex</h1>
             </div>
             <div class="col-md-6 col-sm-8 search-bar" id="search-bar">
                 <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
@@ -22,9 +22,9 @@
                     <a href="#" class="profile-a" style="font-size: 2em; color:#999;" onclick="toggleProfile()">&vellip;</a>
                     <!-- what's under profile -->
                     <div class="profile-content" id="profile-content">
-                        <div class="profile-link"><a href="#">Profile</a></div>
-                        <div class="my-papers"><a href="#">My papers</a></div>
-                        <div class="starred-papers"><a href="#">Starred papers</a></div>
+                        <div class="profile-link"><a href="./profile.php">Profile</a></div>
+                        <div class="my-papers"><a href="./profile.php#my-papers">My papers</a></div>
+                        <div class="starred-papers"><a href="./profile.php#bookmarks">Starred papers</a></div>
                         <div class="add-paper"><a href="./upload.php">Add a paper</a></div>
                         <div class="logout-link">
                             <button class="logout-btn" type="submit" name="submit">Log out </button>

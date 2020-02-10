@@ -88,7 +88,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["publish"])) {
                         <textarea name="abstract" rows="8" cols="80" placeholder="Paper abstract"></textarea>
                     </div>
                 </div>
-                <div class="row anonymous">
+                <!-- no need to be anonymous !-->
+                <div class="row anonymous" style="display: none;">
                     <div class="col-md-2  col-sm-8">Go anonymous</div>
                     <div class="col-md-10 col-sm-4">
                         <input type="checkbox" id="anon-check" style="margin: 0;">

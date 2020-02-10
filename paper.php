@@ -23,8 +23,8 @@
                     <a href="#" class="profile-a" style="font-size: 2em; color:#999;" onclick="toggleProfile()">&vellip;</a>
                     <!-- what's under profile -->
                     <div class="profile-content" id="profile-content">
-                        <div class="profile-link"><a href="#">Profile</a></div>
-                        <div class="my-papers"><a href="#">My papers</a></div>
+                        <div class="profile-link"><a href="./profile.php">Profile</a></div>
+                        <div class="my-papers"><a href="./profile.php/#">My papers</a></div>
                         <div class="starred-papers"><a href="#">Starred papers</a></div>
                         <div class="add-paper"><a href="#">Add a paper</a></div>
                         <div class="logout-link">

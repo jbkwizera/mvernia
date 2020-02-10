@@ -7,6 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
     $fname = trim($_POST["firstname"]);
     $lname = trim($_POST["lastname"]);
     $email = trim($_POST["email"]);
+    $insti = trim($_POST["institution"]);
     $passw = trim($_POST["password"]);
     $confm = trim($_POST["confirm"]);
     // errors that may occur
@@ -42,11 +43,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
             break;
         }
     }
-    // if none-- register the user
+    // if none-- register the user with default params
     if ($isValid) {
         $hash_ = password_hash($passw, PASSWORD_DEFAULT);
-        $sql   = "INSERT INTO users (firstname, lastname, email, password)
-                  VALUES ('$fname', '$lname', '$email', '$hash_')";
+        $sql   = "INSERT INTO users (firstname, lastname, password, institution, email, phone, street, city, state, district, country)
+                  VALUES ('$fname', '$lname', '$hash_', '$insti', '$email', '', '', '', '', '', '')";
 
         if (!mysqli_query($link, $sql))
             die("Something went wrong. Try again later.");
@@ -92,6 +93,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
                     <span class="error-msg"><?php echo $errors[2]; ?></span>
                     <input type="email" name="email" value="" placeholder="Email"
                           value="<?= htmlentities($email); ?>"  />
+                    <input list="institutions" name="institution" placeholder="Institution">
+                    <datalist id="institutions">
+                        <option value="University of Redlands">
+                    </datalist>
                     <span class="error-msg"><?php echo $errors[3]; ?></span>
                     <input type="password" name="password" value="" placeholder="Password"
                           value="<?= htmlentities($passw); ?>"  />
@@ -101,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
                     <div class="row remember-signin">
                         <div class="col-md-6 col-sm-12 row remember">
                             <input type="checkbox" name="remember" id="remember-me" value="Remember me" style="margin:0; width: 1.2em;" checked="">
-                            <label for="remember-me">Mvernia <a href="#">terms</a></label>
+                            <label for="remember-me">Eklex <a href="#">terms</a></label>
                         </div>
                         <div class="col-md-6 col-sm-12 signin-btn-div">
                             <button type="submit" name="signup" class="signin-btn">Create an account</button>
