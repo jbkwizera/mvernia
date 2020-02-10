@@ -45,10 +45,10 @@ window.onclick = function(evt) {
 // resize the logo
 function changeLogo(evt) {
     let logoH = document.getElementsByClassName("logo-name-h")[0];
-    logoH.innerHTML = "mvernia";
+    logoH.innerHTML = "eklex.edu";
     logoH.style.fontSize = "2em";
     if (window.innerWidth <= 800)
-        logoH.innerHTML = "m";
+        logoH.innerHTML = "eklex";
 }
 window.onload = changeLogo;
 window.onresize = changeLogo;
