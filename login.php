@@ -1,15 +1,16 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
+// initialize login session
+session_start();
+
+// send them to home page if already in
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: ./home.php");
+    exit;
+}
+else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
     // establish a connection
     include("./php/config.php");
-    // initialize login session
-    session_start();
 
-    // send them to home page if already in
-    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        header("location: ./home.php");
-        exit;
-    }
     $email_err= $pass_err = "";
     $email    = $_POST["email"];
     $password = $_POST["password"];
@@ -18,9 +19,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
     $res = mysqli_fetch_assoc(mysqli_query($link, $sql));
     if (count($res) > 0) {
         if (password_verify($password, $res["password"])) {
-            session_start();
+            // set session variables and redirect.
             $_SESSION["loggedin"] = true;
-            $_SESSION["email"]    = $email;
+            foreach ($res as $data => $value)
+                $_SESSION[$data] = $value;
             header("location: ./home.php");
         }
         else $pass_err = "Wrong password";

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -18,19 +19,7 @@
                 <input type="text" id="search-input" placeholder="Search..." name="" value="">
             </div>
             <div class="col-md-3 col-sm-2 notification-profile">
-                <div class="profile float">
-                    <a href="#" class="profile-a" style="font-size: 2em; color:#999;" onclick="toggleProfile()">&vellip;</a>
-                    <!-- what's under profile -->
-                    <div class="profile-content" id="profile-content">
-                        <div class="profile-link"><a href="./profile.php">Profile</a></div>
-                        <div class="my-papers"><a href="./profile.php#my-papers">My papers</a></div>
-                        <div class="starred-papers"><a href="./profile.php#bookmarks">Starred papers</a></div>
-                        <div class="add-paper"><a href="./upload.php">Add a paper</a></div>
-                        <div class="logout-link">
-                            <button class="logout-btn" type="submit" name="submit">Log out </button>
-                        </div>
-                    </div>
-                </div>
+                <?php include("./profile_dropdown.php"); ?>
                 <div class="notification float">
                     <i class="fa fa-bell" style="font-size:1.5em;color:#23C265"></i>
                 </div>

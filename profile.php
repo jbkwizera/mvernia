@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -19,9 +21,7 @@
                 <input type="text" id="search-input" placeholder="Search..." name="" value="">
             </div>
             <div class="col-md-3 col-sm-2 notification-profile">
-                <div class="profile float">
-                    <a href="#" style="font-size: 2em; color:#999;">&vellip;</a>
-                </div>
+                <?php include("./profile_dropdown.php"); ?>
                 <div class="notification float">
                     <i class="fa fa-bell" style="font-size:1.5em;color:#23C265"></i>
                 </div>
