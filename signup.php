@@ -72,9 +72,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
         <div class="row row-main">
             <div class="col-md-6 col-sm-1 offset-left">
                 <!-- images -->
-                <img src="./media/bgimage.png" alt="">
+                <img src="./media/holder.png" alt="">
             </div>
-            <div class="col-md-4 col-sm-10 form-container">
+            <div class="col-md-6 col-sm-10 form-container">
                 <!-- login or signup -->
                 <form class="signin-form" method="post">
                     <div>
@@ -119,7 +119,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
                     </div>
                 </form>
             </div>
-            <div class="col-md-2 col-sm-1 offset-right"></div>
+            <!--
+            <div class="col-md-2 col-sm-1 offset-right"></div>-->
         </div>
         </body>
     </html>
