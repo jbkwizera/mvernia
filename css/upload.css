@@ -1,6 +1,10 @@
 .main {
     width: 80%;
     margin: 0 auto;
+    font-family: "Avenir";
+}
+h1 {
+    font-family: "Avenir Medium";
 }
 form {
     width: 100%;

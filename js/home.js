@@ -36,30 +36,34 @@ document.getElementById("search-input").addEventListener("click", function() {
     this.parentElement.style.borderRadius = "1.2em";
 
 });
-window.onclick = function(evt) {
-    if (!evt.target.matches("#search-input")) {
+window.onclick = function(event) {
+    if (!event.target.matches("#search-input")) {
         document.getElementById("search-bar").style.border = "none";
     }
 }
 
 // resize the logo
-function changeLogo(evt) {
+function changeLogo(event) {
     let logoH = document.getElementsByClassName("logo-name-h")[0];
-    logoH.innerHTML = "eklex.edu";
+    logoH.innerHTML = "Mouseion";
     logoH.style.fontSize = "2em";
     if (window.innerWidth <= 800)
-        logoH.innerHTML = "eklex";
+        logoH.innerHTML = "Mouseion";
 }
 window.onload = changeLogo;
 window.onresize = changeLogo;
 
-// add click event
-Array.prototype.forEach.call(document.getElementsByClassName("paper-visible"), paper => {
-    paper.addEventListener("click", function() {
-        window.location.href = "paper.php";
-    })
-});
+// click event listener
+function redirectToPaper(event) {
+    var paperVisible = event.target;
+    if (!event.target.classList.contains("paper-visible"))
+        paperVisible = event.target.closest(".paper-visible");
+    var paperTitle = paperVisible.getElementsByClassName("paper-title")[0];
+    window.localStorage.setItem("paperTitle", paperTitle.innerHTML);
+    window.location.href = "./paper.php";
+}
 
-Array.prototype.forEach.call(document.getElementsByClassName(""), imgElem => {
-
+document.querySelector("h1").addEventListener("click", function() {
+    if (!window.location.href.endsWith("index.php"))
+        window.location.href = "index.php";
 });

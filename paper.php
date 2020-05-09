@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -12,26 +13,14 @@
     <body>
         <header class="row">
             <div class="col-md-3 col-sm-2 brand">
-                <h1 class="logo-name-h">mvernia</h1>
+                <h1 class="logo-name-h">Mouseion</h1>
             </div>
             <div class="col-md-6 col-sm-8 search-bar" id="search-bar">
                 <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
                 <input type="text" id="search-input" placeholder="Search..." name="" value="">
             </div>
             <div class="col-md-3 col-sm-2 notification-profile">
-                <div class="profile float">
-                    <a href="#" class="profile-a" style="font-size: 2em; color:#999;" onclick="toggleProfile()">&vellip;</a>
-                    <!-- what's under profile -->
-                    <div class="profile-content" id="profile-content">
-                        <div class="profile-link"><a href="./profile.php">Profile</a></div>
-                        <div class="my-papers"><a href="./profile.php/#">My papers</a></div>
-                        <div class="starred-papers"><a href="#">Starred papers</a></div>
-                        <div class="add-paper"><a href="#">Add a paper</a></div>
-                        <div class="logout-link">
-                            <button class="logout-btn" type="submit" name="submit">Log out </button>
-                        </div>
-                    </div>
-                </div>
+                <?php include("./profile_dropdown.php"); ?>
                 <div class="notification float">
                     <i class="fa fa-bell" style="font-size:1.5em;color:#23C265"></i>
                 </div>
@@ -40,7 +29,7 @@
         <div class="main">
             <div class="row title-author">
                 <div class="col-md-10">
-                    <h1 class="title">A Rederivation of Maxwell’s Equations Regarding Electromagnetism</h1>
+                    <h1 class="title">Percolation and Random Graphs</h1>
                     <h3 class="author author-organization">Dr. Sheldon Cooper, California Institute of Technology (Calitech)</h3>
                 </div>
                 <div class="col-md-2 row paper-widgets">
@@ -93,8 +82,27 @@
                 </div>
             </div>
             <hr>
+            <div class='sneak-peek'>
+                <?php
+                $document = new DOMDocument();
+                @$document->loadHTML(@file_get_contents(basename(__FILE__)));
+                $title  = $document->getElementsByTagName("title")[0]->textContent;
+                $source = "./paper/mathematics/" . $title . ".pdf";
+                $destin = "./paper/thumbnail/" . $title;
+                exec("pdfjam -o ". $destin."pdf" . $source ." 1 ");
+                exec("convert -density 300 ". $destin."pdf" . $destin."jpg");
+                exec("rm ". $destin."pdf");
+                ?>
+            </div>
         </div>
-        <?php include("messaging.php"); ?>
+        <?php include("commenting.php"); ?>
         <script type="text/javascript" src="./js/home.js"></script>
+        <script type="text/javascript">
+            var paperTitle = window.localStorage.getItem("paperTitle");
+            // do some php work here in retrieving all data related to this title.
+            for (let elem of document.getElementsByTagName("title"))
+                elem.innerHTML = window.localStorage.getItem("paperTitle");
+            document.getElementsByClassName("title")[0].innerHTML = paperTitle;
+        </script>
     </body>
 </html>

@@ -12,7 +12,7 @@
     <body>
         <header class="row">
             <div class="col-md-3 col-sm-2 brand">
-                <h1 class="logo-name-h">Eklex</h1>
+                <h1 class="logo-name-h">Mouseion</h1>
             </div>
             <div class="col-md-6 col-sm-8 search-bar" id="search-bar">
                 <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>

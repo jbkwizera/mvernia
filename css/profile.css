@@ -1,5 +1,6 @@
 header {
     margin-bottom: 0;
+    font-family: "Avenir Medium";
 }
 .main {
     width: 80%;
@@ -7,6 +8,7 @@ header {
     border: 1px solid #999;
     border-top: none;
     border-radius: 0 0 5px 5px;
+    font-family: "Avenir";
 }
 /*edits ==draft */
 .header {

@@ -4,7 +4,7 @@ session_start();
 
 // send them to home page if already in
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: ./home.php");
+    header("location: ./index.php");
     exit;
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
@@ -23,7 +23,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
             $_SESSION["loggedin"] = true;
             foreach ($res as $data => $value)
                 $_SESSION[$data] = $value;
-            header("location: ./home.php");
+            header("location: ./index.php");
         }
         else $pass_err = "Wrong password";
     }
@@ -43,7 +43,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
     </head>
     <body>
         <header>
-            <h1>mvernia</h1>
+            <h1>Mouseion</h1>
         </header>
         <div class="row">
             <div class="col-md-6 col-sm-1 offset-left">

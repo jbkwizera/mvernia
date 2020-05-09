@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["publish"])) {
 
     // read in title,  authors category abstract
     $title   = trim($_POST["title"]);
-    $filename= md5($title).".json";
+    $filename= md5($title);
     $zip     = array_map(null, $_POST["auth-name"], $_POST["auth-inst"]);
     $authors = array();
     foreach ($zip as $index => $auth)
@@ -17,17 +17,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["publish"])) {
     // Get file and move it to ./paper/category/
     $upload_err  = "";
     $destination = "";
+    $comments_path="";
     if (isset($_FILES["paper"]) && $_FILES["paper"]["error"] == false) {
         $destination  = "./paper/" . strtolower($category) . "/";
         if (!is_dir($destination)) mkdir($destination);
 
-        $destination .= basename($filename);
+        $destination .= basename($filename).".pdf";
         if (file_exists($destination))
             $upload_err = "File already exists.";
         elseif (!move_uploaded_file($_FILES["paper"]["tmp_name"], $destination))
             $upload_err = "File upload unsuccessful :(";
         else {
-            $comments_path = "./comment/".$filename;
+            $comments_path = "./comment/".$filename.".json";
             $pcomments = fopen($comments_path, "w");
             file_put_contents($comments_path, "parent = []");
             fclose($pcomments);
@@ -43,11 +44,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["publish"])) {
     $category = $_POST["category"];
     $insert_err = "";
     $sql = "INSERT INTO papers (title, filepath, abstract, authors,
-            date_published, category, likes, downloads, views, comment_count, comment_quality, comments)
+            date_published, category, likes, downloads, views, comment_count, comment_quality, comment_path)
             VALUES ('$title', '$destination', '$abstract', '$authors',
                     '$publish_date', '$category', '0', '0', '0', '0', '0', '$comments_path')";
-    if (!mysqli_query($link, $sql))
-        $insert_err = "Insert unsuccessful.";
+                    
+    if (strlen($upload_err) > 0 || !mysqli_query($link, $sql))
+        $insert_err = "Insert unsuccessful";
     mysqli_close($link);
 }
 ?>

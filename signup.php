@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
     if ($isValid) {
         $hash_ = password_hash($passw, PASSWORD_DEFAULT);
         $sql   = "INSERT INTO users (firstname, lastname, password, institution, email, phone, street, city, state, district, country)
-                  VALUES ('$fname', '$lname', '$hash_', '$insti', '$email', '', '', '', '', '', '')";
+                  VALUES ('$fname', '$lname', '$hash_', '$insti', '$email', '+1-234-567-8910', '', '', '', '', '')";
 
         if (!mysqli_query($link, $sql))
             die("Something went wrong. Try again later.");
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <header><h1>mvernia</h1></header>
+        <header><h1>Mouseion</h1></header>
         <div class="row">
             <div class="col-md-6 col-sm-1 offset-left">
                 <!-- images -->
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
                     <div class="row remember-signin">
                         <div class="col-md-6 col-sm-12 row remember">
                             <input type="checkbox" name="remember" id="remember-me" value="Remember me" style="margin:0; width: 1.2em;" checked="">
-                            <label for="remember-me">Eklex <a href="#">terms</a></label>
+                            <label for="remember-me">Mouseion <a href="#">terms</a></label>
                         </div>
                         <div class="col-md-6 col-sm-12 signin-btn-div">
                             <button type="submit" name="signup" class="signin-btn">Create an account</button>

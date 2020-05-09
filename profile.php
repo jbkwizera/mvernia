@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dr. Sheldon Cooper</title>
+        <title><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]; ?></title>
         <link rel="stylesheet" href="./css/master.css">
         <link rel="stylesheet" href="./css/home.css">
         <link rel="stylesheet" href="./css/profile.css">
@@ -14,7 +14,7 @@
     <body>
         <header class="row">
             <div class="col-md-3 col-sm-2 brand">
-                <h1 class="logo-name-h">mvernia</h1>
+                <h1 class="logo-name-h">Mouseion</h1>
             </div>
             <div class="col-md-6 col-sm-8 search-bar" id="search-bar">
                 <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
@@ -36,8 +36,8 @@
                     <br>
                     <h3>Contact</h3>
                     <ul>
-                        <li>Phone: <a class="contact-phone" href="tel:+1-123-456-7890">+1-123-456-7890</a></li>
-                        <li>Email: <a class="contact-email" href="mailto: cooper@calitech.edu">cooper@calitech.edu</a></li>
+                        <li>Phone: <a class="contact-phone" href="tel: <?php echo $_SESSION['phone']; ?>"><?php echo $_SESSION["phone"]; ?></a></li>
+                        <li>Email: <a class="contact-email" href="mailto: <?php echo $_SESSION['email']; ?>"><?php echo $_SESSION["email"]; ?></a></li>
                     </ul>
                 </div>
                 <div class="photo-canvas col-md-6">

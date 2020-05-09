@@ -3,6 +3,7 @@ header {
     padding: 1.2em 1em;
     padding-right: 0;
     border-bottom: 1px solid #999;
+    font-family: "Avenir Medium";
 }
 .search-bar input {
     height: 2em;
@@ -13,7 +14,8 @@ header {
     outline: none;
     margin: 0;
     padding: 0 1em;
-
+    font-family: "Avenir";
+    
     float: right;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -53,6 +55,7 @@ header {
     text-align: center;
     margin-right: 2em;
     position: relative;
+    font-family: "Avenir";
 }
 
 .profile:hover {
@@ -67,7 +70,7 @@ header {
     position: absolute;
     top: 3.2em;
     right: 0;
-    min-width: 120px;
+    min-width: 150px;
     z-index: 1;
 
     background: #ddd;
@@ -75,7 +78,7 @@ header {
     border-radius: 2px;
 }
 .profile-content div {
-    padding: 0.4em 0.5em;
+    padding: 0.5em;
     vertical-align: middle;
 }
 .profile-content div:first-child {
@@ -96,6 +99,12 @@ header {
 }
 .profile-content div:hover {
     background: lightgrey;
+    color: #23C265;
+}
+.profile-content div {
+    height: 2em;
+    display: flex;
+    align-items: center;
 }
 .profile-content button:hover {
     color: red;
@@ -127,6 +136,13 @@ header {
 .paper-invisible {
     display: flex;
     justify-content: space-between;
+    text-align: center;
+}
+.paper-invisible div a span {
+    color: #23c265;
+}
+.paper-invisible div a span:last-child {
+    font-size: 0.9em;
 }
 .paper-invisible * {
     display: none;
