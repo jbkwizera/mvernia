@@ -45,7 +45,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signin"])) {
         <header>
             <h1>Mouseion</h1>
         </header>
-        <div class="row">
+        <div class="row row-main">
             <div class="col-md-6 col-sm-1 offset-left">
                 <!-- images -->
                 <img src="./media/bgimage.png" alt="">
